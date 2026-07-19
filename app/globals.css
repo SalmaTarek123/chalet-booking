@@ -120,3 +120,270 @@ body {
   from { transform: translateX(0); }
   to { transform: translateX(-45.45%); }
 }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2rem;
+  background: #0B2E38;
+}
+
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #FBF8F2;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(251,248,242,0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #F0A63D;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6,26,32,0.35) 0%, rgba(6,26,32,0.6) 100%);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  color: #FBF8F2;
+  padding: 1rem;
+}
+
+.slide-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 0.6rem;
+}
+
+.slide-content p {
+  font-weight: 300;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.dot.active {
+  background: #F0A63D;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #0B2E38;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #555;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.destination-card {
+  position: relative;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,46,56,0.1) 40%, rgba(11,46,56,0.85) 100%);
+}
+
+.destination-label {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  z-index: 2;
+  color: #FBF8F2;
+}
+
+.destination-label h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.destination-label span {
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.85;
+}
+
+.about-section {
+  background: #FBF8F2;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-section .section-title {
+  color: #0B2E38;
+}
+
+.about-text {
+  max-width: 640px;
+  margin: 0 auto;
+  color: #444;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.footer {
+  background: #0B2E38;
+  color: rgba(251,248,242,0.7);
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .slider {
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .slide-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .slide-content p {
+    font-size: 0.85rem;
+  }
+
+  .section {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .destination-card {
+    height: 220px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 0.7rem;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+
+  .slide-content h2 {
+    font-size: 1.3rem;
+  }
+}
